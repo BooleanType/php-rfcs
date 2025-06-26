@@ -37,26 +37,20 @@ class User
 {
     private string $full;
 
-    private string $first {
-        set {
-            $this->first = $value;
-            unset($this->full);
-        }
-    };
-    private string $last {
-        set {
-            $this->last = $value;
-            unset($this->full);
-        }
-    };
-
     public function __construct(
-        string $first,
-        string $last,
-    ) {
-        $this->first = $first;
-        $this->last = $last;
-    }
+        private string $first {
+        	set {
+	            $this->first = $value;
+	            unset($this->full);
+	        }
+        },
+        private string $last {
+	        set {
+	            $this->last = $value;
+	            unset($this->full);
+	        }
+    	}
+    ) {}
     
     public string $fullName { get => $this->full ??= $this->first . " " . $this->last; }
 }
