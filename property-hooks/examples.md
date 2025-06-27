@@ -42,13 +42,13 @@ class User
             $this->first = $value;
             unset($this->full);
         }
-    };
+    }
     private string $last {
         set {
             $this->last = $value;
             unset($this->full);
         }
-    };
+    }
 
     public function __construct(
         string $first,
